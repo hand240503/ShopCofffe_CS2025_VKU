@@ -3,22 +3,36 @@
 
 <body>
 <div th:fragment="header">
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
     <div class="tm-top-header">
         <div class="container">
             <div class="row">
                 <div class="tm-top-header-inner">
                     <div class="tm-logo-container">
-                        <img src="img/logo.png" alt="Logo" class="tm-site-logo">
-                        <h1 class="tm-site-name tm-handwriting-font">Cafe House</h1>
+                        <img src="/files/logo.png" alt="Logo" class="tm-site-logo">
+                        <a href="/"
+                           class="tm-site-name tm-handwriting-font tm-logo"
+                           style="text-decoration: none; color: #c79c60; transition: color 0.3s;"
+                           onmouseover="this.style.color='rgba(255, 255, 255, 0.9)';"
+                           onmouseout="this.style.color='#c79c60';">
+                            Cafe House
+                        </a>
+
+
                     </div>
                     <div class="mobile-menu-icon">
                         <i class="fa fa-bars"></i>
                     </div>
                     <nav class="tm-nav">
                         <ul>
-                            <li><a href="/" class="active">Home</a></li>
-                            <li><a href="today-special.html">Today Special</a></li>
-                            <li><a href="/menu">Menu</a></li>
+                            <li><a href="/" th:classappend="${title == 'Home' ? ' active' : ''}">Home</a></li>
+<!--                            <li><a href="today-special.html">Today Special</a></li>-->
+                            <li><a href="/collections/coffee" th:classappend="${title == 'Menu' ? ' active' : ''}">Menu</a>
+                            </li>
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
                     </nav>

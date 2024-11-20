@@ -16,7 +16,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 @Configuration
 public class SecurityConfig {
 
-    private static final String[] PUBLIC_URLS = {"/", "/menu","/document/**","/files/**", "/css/**", "/js/**", "/img/**", "/fonts/**"};
+    private static final String[] PUBLIC_URLS = {"/", "/collections/**", "/orders", "/products/**", "/document/**", "/files/**", "/css/**", "/js/**", "/img/**", "/fonts/**"};
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {

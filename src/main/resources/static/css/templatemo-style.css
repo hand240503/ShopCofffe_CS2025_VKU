@@ -567,9 +567,9 @@ ol li:before {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
+  /*-webkit-justify-content: space-between;*/
       -ms-flex-pack: justify;
-          justify-content: space-between;
+          /*justify-content: space-between;*/
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
@@ -599,14 +599,22 @@ ol li:before {
   position: relative;
 }
 .tm-product-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    width: 100%;
   margin-top: 0;
   margin-bottom: 15px;
   -webkit-transition: all 0.3s ease;
           transition: all 0.3s ease;
 }
 .tm-product-description {
-  margin-bottom: 0;
-  text-align: justify;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    width: 100%;
 }
 .tm-product-price-link {
   border: 2px solid rgb(174,174,174);
@@ -619,6 +627,7 @@ ol li:before {
   padding-top: 7px;
   font-size: 40px;
   color: rgb(174,174,174);
+    text-decoration: none;
 }
 .tm-product {
   cursor: pointer;
@@ -763,3 +772,184 @@ button.tm-more-button {
 @media screen and (max-width: 370px) {
   .tm-welcome-content { margin-bottom: 60px; }
 }
+
+.custom-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e9720f;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.custom-button:hover {
+    background-color: #d5660e;
+}
+
+.custom-button i {
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+.quantity-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 20px 0;
+}
+
+.quantity-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quantity-btn:hover {
+    background-color: #ddd;
+}
+
+.quantity-btn.plus {
+    background-color: #ffa500; /* Màu cam cho nút cộng */
+    color: white;
+}
+
+.quantity-number {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.yellow-btn {
+    background-color: #ffa500;
+}
+
+/* Modal Styles */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    animation: fadeIn 0.3s ease-in-out;
+    text-align: center;
+}
+
+.modal-header {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.delivery-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff9800;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delivery-button:hover {
+    background-color: #e68900;
+}
+
+.modal-body {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    background: #f7f7f7;
+}
+
+.address-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #333;
+    background: transparent;
+}
+
+.clear-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff4d4d;
+    border: none;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.clear-button:hover {
+    background: #d73838;
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn-primary-custom {
+    background-color: orange;
+    border-color: orange;
+    padding: 5px;
+    margin: 10px 0;
+}
+
+.btn-primary-custom:hover {
+    background-color: #e68a00;
+}
+
+

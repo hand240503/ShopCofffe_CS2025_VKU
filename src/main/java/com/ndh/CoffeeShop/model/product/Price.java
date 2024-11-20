@@ -1,5 +1,6 @@
 package com.ndh.CoffeeShop.model.product;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.ndh.CoffeeShop.model.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
@@ -21,7 +22,7 @@ public class Price extends BaseEntity {
     private Double currentValue;
 
     @Column(name = COL_OLD_VALUE, nullable = false)
-    private String oldValue;
+    private Double oldValue;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = COL_UNIT_ID, nullable = false)
@@ -29,5 +30,6 @@ public class Price extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = COL_PRODUCT_ID, nullable = false)
+    @JsonIgnore
     private Product product;
 }

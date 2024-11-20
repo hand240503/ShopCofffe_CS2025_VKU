@@ -6,28 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title th:text="${title}">Title</title>
     <!-- Bootstrap CSS -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700' rel='stylesheet'
+          type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Damion' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
     <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}">
     <link rel="stylesheet" th:href="@{/css/templatemo-style.css}">
-    <link rel="shortcut icon" th:href="@{/img/favicon.ico}" type="image/x-icon" />
+    <link rel="shortcut icon" th:href="@{/img/favicon.ico}" type="image/x-icon"/>
 
 </head>
 
 <body>
-<div th:replace="fragments/header :: header">
+<div th:replace="~{fragments/header :: header}">
 </div>
 
 <div layout:fragment="content">
 
 </div>
 
-<div th:replace="fragments/footer :: footer">
+<div th:replace="~{fragments/footer :: footer}">
 </div>
 
+
 <!-- Bootstrap JS and dependencies -->
-<script type="text/javascript" th:src="@{/js/jquery-1.11.2.min.js}"></script> <!-- jQuery -->
+<script type="text/javascript" th:src="@{/js/jquery-3.7.1.min.js}"></script> <!-- jQuery -->
 <script type="text/javascript" th:src="@{/js/templatemo-script.js}"></script> <!-- Templatemo Script -->
+<script type="text/javascript" th:src="@{/js/index.js}"></script>
 </body>
 </html>
